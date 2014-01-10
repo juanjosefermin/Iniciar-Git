@@ -54,3 +54,7 @@ ESTO NOS ABRIRA UNAS INSTRUCCIONES PARA AGREGAR EL REPOSITORIO CON EL COMANDO "G
 
 16
 LUEGO SERIA AGREGAR EL SIGUIENTE COMANDO "GIT PUSH -U ORIGIN MASTER" ESTO NOS PEDIRA LA CONTRASEÑA QUE CREAMOS PARA LA CLAVE SSH LA DIGITAS 
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+Editar el último mensaje de un commit
+git commit --amend -m "Mi nuevo mensaje de commit"
