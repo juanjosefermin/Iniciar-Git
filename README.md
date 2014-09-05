@@ -1,60 +1,49 @@
-Iniciar-Git
-===========
+## **Iniciar Git en Ubuntu && Windows con Githud Y Bitbucket** ##
 
-::::::::::::::::::::::::::::::::::::::::::::::::
+Primero iremos al site de git en descarga [aqui](http://git-scm.com/downloads) dependiendo de tu O.s.
 
-PASOS PARA AGREGAR UN REPOSITORIO A GITHUB
+**Instalar en Windows**
+en windows descargas el ejecutable y lo instalas comun y corriente como cualquier programa, luego en el asistente del instalador llegaras a una opcion que dice algo referente sobre instalarlo en el cmd osea en la consola de windows. 
 
-:::::::::::::::::::::::::::::::::::::::::::::::
+**Instalar en Ubuntu** 
+En ubuntu es algo diferente solo va a la opcion Linux y esta la distro **Debian/Ubuntu** y copia esta linea
 
-1
-ME UBICO EN LA CARPETA DONDE TENGO MI PROYECTO A VERSIONAR , DENTRO DE LA CONSOLA
+    sudo apt-get install git
 
-2
-ESTANDO EN EL FICHERO TIPEO EL COMANDO "GIT INIT" PARA INDICAR QUE VOY A EMPEZAR A VERSIONAR ESTA CARPETA CON TODO SU CONTENIDO
+ abres una  terminal con el atajo de teclado <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd> T</kbd> y pegas el comando que sale en la lista de **Debian/Ubuntu**. y das intro, te pedira tu contraseña de ubuntu, y luego preguntara si quieres decargar esos paquetes solo escribes **yes** y intro, y a esperar a que todo descargue e instale.
 
-3
-SEGUIDO TIPEAREMOS EL SIGUIENTE COMANDO "GIT STATUS" ESTE COMANDO NOS MOSTRARA EN COLOR ROJO TODOS LOS ARCHIVOS QUE AUN NO HEMOS HECHO COMMIT O AGREGADO O E MODIFICADO 
+Ya descargado Git en nuestro O.s lo siguiente es ir y crearte una cuenta en [Github](https://github.com) y [Bitbucket](https://bitbucket.org/) te aconsejo que primero la crees en Github para que cuando vayas a crearla en bitbucket solo es asociarla a la cuenta de github 
+> **Tip:** Esto se hace para ahorrar al  escribir informacion en ambas cuentas la otra cuestion es que en bitbucket puedes crear respositorios privados y gratis, claro con ciertos limites
 
-4
-LUEGO "GIT ADD -- ALL" ME AGREGA TODOS LOS ARCHIVOS QUE ESTAN DENTRO DE MI CARPETA O SIMPLEMENTE AGREGANDO UN ARCHIVO ALA VEZ CON "GIT ADD NOMBREARCHIVO.PHP"
+**Usando la Terminal en Ubuntu o Consola en Windows**
+ 
+ Esto es para ambas estos comando:
 
-5
-LUEGO DAREMOS "GIT STATUS" ESTE COMANDO NOS MOSTRARA EN VERDE LOS ARCHIVOS QUE ESTAN AGREGADOS CON LA PALABRA NEW FILE: 
+    git config --global user.name "username"
 
-6
-"GIT COMMIT -M" ESTE COMANDO ME HACE COMENTAR CADA VES QUE MODIFIQUE UN ARCHIVO 
+donde en "username" colocaras tu nombre incluyendo las comillas y das intro
 
-7
-DESPUES DE HABER COMENTADO PUEDO VOLVER A DAR "GIT STATUS" PARA VER EL ON BRANCH MASTER DEBERIA DE SALIRME (NOTHING TO COMMIT, WORKING DIRECTORY CELAN)
+    git config --global user.email email@gmail.com
+el siguiente es dar un correo donde en email@gmail.com va tu correo  y das intro.
 
-8
-"GIT LOG" ESTE COMANDO ES NECESARIO YA QUE ME BRINDA LA INFORMACION DE TODOS LOS COMMIT QUE VOY HACIENDO DESDE EL DIA Y FECHA Y INFORMACION DE EL USUIARO DE QUE HA HECHO LA MODIFICACION
+lo siguiente es crearnos una llave SSH para conectar nuestro equipo con el repositorio remoto tanto en gitHub como en Bitbucket  en la terminal o consola escribimos
 
-9
-AQUI PUEDO TENER ABIERTO MI PROYECTO N EL EDITOR Y PUEDO HACER UN CAMBIO EN ALGUN ARCHIVO PARA VER QUE SE HA MODIFICADO ALGO SOLO CON EL COMANDO "GIT STATUS" ME MOSTRATA EN ROJO EL ARCHIVO QUE E MODIFICADO
+    ssh-keygen
+    
+   donde esto mostrar el siguiente mensaje 
+   
 
-10
-TAMBIEN ESTA EL COMANDO Y UTIL"GIT DIFF" QUE ME MUESTRA TAL CUAL LA LINEA QUE MODIFIQUE EN VERDE Y LA QUE ANTES ERA EN ROJO, PARA SALIR DE ESA EDICCION SOLO TECLEA LA TECLA ESC Y LA TECLA Q
+    Generating public/private rsa key pair.
+    Enter file in which to save the key
+    (/home/you/.ssh/id_rsa):
 
-11
-LUEGO DE HACER ALGUNA MODIFICACION HACER LO SIGUIENTE "GIT ADD NOMBREARCHIVO.PHP"
+ hay te muestra la ruta donde va a crearse la llave SSH en donde esta ruta es para la distro de ubuntu para windows seria la siguiente
 
-12
-PARA LUEGO COMENTAR EL CMABIO QUE HEMOS HECHO CON EL SIGUIENTE COMANDO "GIT COMMIT -M "TEXTO A COMENTAR" ".
+    C:\DocumentsandSettings\username\.ssh\ 
+    o 
+    C:\Users\username\.ssh
+Donde en username es tu nombre de usuario en tu O.s, Esta carpeta de .ssh estara oculta asi que no la veras si quieres ver archivo y carpetas ocultas, busca como mostrar archivos ocultos en windows. Ya estando en la carpeta .ssh en Ubuntu escribe 
 
-13
-SI NOS SALE ALGUN ERROR ALA HORA DE COMENTAR ALGO LO SOLUCIONAMOS CON EL SIGUIENTE COMANDO "GIT COMMIT -A -M "Y EL TEXTO A GREGAR" ".
-
-14
-AHORA LO QUE HAREMOS ES AGREGARLO A GITHUB CREANDO UN NUEVO REPOSITORIO Y NO PALOMEAMOS EL README
-
-15
-ESTO NOS ABRIRA UNAS INSTRUCCIONES PARA AGREGAR EL REPOSITORIO CON EL COMANDO "GIT REMOTE ADD ORIGIN GIT@GITHUB.COM:NICKNAME/NOMBREPORYECTO.GIT" LO EJECUTAMOS Y NO DEBERA SALIR NINGUN ERROR SI TODO VA BIEN
-
-16
-LUEGO SERIA AGREGAR EL SIGUIENTE COMANDO "GIT PUSH -U ORIGIN MASTER" ESTO NOS PEDIRA LA CONTRASEÑA QUE CREAMOS PARA LA CLAVE SSH LA DIGITAS 
-
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-Editar el último mensaje de un commit
-git commit --amend -m "Mi nuevo mensaje de commit"
+    cat id_rsa.pub
+    
+   esto te mostrara la llave publica que deberas copiar para asociarla a ambos repositorios remotos de gitHub y Bitbucket. En github vas al icono <i class="icon-cog"></i> **Settings** que es el de configuraciones y en la opcion de SSH keys añades tu llave publica donde le colocas un nombre cualquiera, esto se hace para cuando trabajas con varios equipos los identifique de donde haces las modificaciones, por ejemplo un equipo en la casa y el trabajo
