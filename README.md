@@ -69,22 +69,49 @@ donde le darás Yes y enter, esto de devolverá un mensaje como el siguiente
     Hi username! You've successfully authenticated, but GitHub does not provide shell access.
  con esto seria  todo para asociar las llaves publcas y poer empezar a versionar tus proyectos 
 
+
+#Clonar un repositorio
 si quieres clonar un repositorio primero ubicate en la carpeta o ruta de donde quieres clonar el repositorio y escribe el siguiente comando:
 
     git clone git@bitbucket.org:LearningTools/ubuntugit.git
 para un repositorio mio en bitbucket y para clonar un repositorio en github seria el siguiente
 
-    git@github.com:LearningTools/App-1.git
+    git clone git@github.com:LearningTools/App-1.git
 si te pide contraseña coloca la  que colocaste cuando se creo la llave ssh al comienzo con esto ya tienes un proyecto y puedes empezar a versionarlo.
 
 #Iniciar un repositorio vacio
-si no quieres clonar un repositorio y quieres empezar uno desde cero vuelve a la consola o terminal y ubucate a donde quieras crear un nuevo proyecto crea una carpeta y entro de la carpeta creada escribe el siguiente comando 
+si no quieres clonar un repositorio y quieres empezar uno desde cero vuelve a la consola o terminal y ubicate a donde quieras crear un nuevo proyecto crea una carpeta y entro de la carpeta creada escribe el siguiente comando 
 
     git init
-esto significa que vas a empezar a versionar tu proyecto empieza creando un archivo del lenguaje que tu uses y cuando lo crees y aya contenido en ese archivo guarda y en la consola escribe el siguiente comando para ver que cambios hay en tu nuevo proyecto 
+   esto devolvera algo asi
+   
+
+    Initialized empty Git repository in /ruta/del/proyecto/creado/.git/
+
+
+esto significa que vas a empezar a versionar tu proyecto empieza creando un archivo del lenguaje que tu uses y cuando lo crees y tenga contenido en ese archivo guarda y en la consola escribe el siguiente comando para ver que en que archivos huvieron cambios
 
     git status
 
- 
- 
-  
+con  este comando veras en color rojo los archivos modificados, para agregar ese cambio de un archivo solo escribe
+
+    git add nombreArchivo.html
+y si son varios archivos cambiados escribe
+
+    git add .
+esto agregara todos los archivos modificados ahora solo deberemos dar una pequeña descripcion de lo que se hizo en ese archivo con el siguiente comando
+
+    git commit -m "descripcion del cambio"
+las comillas "" son exenciales ya que hay va la descripcion de lo que se hizo en ese archivo o los archivos que se modificaron
+
+ahora solo deberemos agregar este proyecto que hicimos en local ahora ve a las cuentas de github o bibucket y crea un repositorio, dale un nombre y dale en crear, cuando este creado nos dara unas instrucciones en nuestro caso solo veremos la de esta opcion
+**or push an existing repository from the command line**
+que primero agregamos el ropositorio a el remoto con el comando
+
+    git remote add origin git@github.com:userName/nombreRepositorio.git
+
+y solo impulsamos el contenido con el comando 
+
+    git push -u origin master
+
+> Written with [StackEdit](https://stackedit.io/).
