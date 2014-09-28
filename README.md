@@ -1,4 +1,12 @@
+##Menu
+
 -[Iniciar Git con Ubuntu](https://github.com/LearningTools/Iniciar-Git#iniciar-git-en-ubuntu--windows-con-githud-y-bitbucket)
+
+-[Comprobar llave SSH](https://github.com/LearningTools/Iniciar-Git#comprobar-llave-ssh)
+
+-[Clonar un repositorio](https://github.com/LearningTools/Iniciar-Git#clonar-un-repositorio)
+
+-[Inicar un repositorio vacio](https://github.com/LearningTools/Iniciar-Git#iniciar-un-repositorio-vacio)
 
 
 ## **Iniciar Git en Ubuntu && Windows con Githud Y Bitbucket** ##
